@@ -1,0 +1,31 @@
+<div class="flex items-center justify-center flex-col p-5">
+  <h1>Product List</h1>
+  <p class="text-red-700">{{deletedproducts}}</p>
+  <table>
+    <thead class="text-black">
+      <tr >
+        <th>Image</th>
+        <th>Name</th>
+        <th>price</th>
+        <th>color</th>
+        <th>category</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList">
+        <td class="h-[100px] w-[100px]"><img src="{{item.image}}" alt=""></td>
+      <td>{{item.name}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.color}}</td>
+    <td>{{item.category}}</td>
+    <td>{{item.description}}</td>
+    <td class="space-x-5">
+    <fa-icon (click)="deleteproduct(item.id)" [icon]="icon"></fa-icon>
+    <a routerLink="/seller-update-product/{{item.id}}"><fa-icon [icon]="faedit"></fa-icon></a></td>
+    <!-- <td><button  >Delete</button></td> -->
+    </tr>
+    </tbody>
+  </table>
+</div>

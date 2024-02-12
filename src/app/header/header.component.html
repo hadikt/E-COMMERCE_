@@ -1,0 +1,25 @@
+<nav class="nav flex justify-between bg-slate-400  items-center p-3">
+<h1 class="text-red-400 bg-slate-400" routerLink="" ><img   src="../../assets/ECart generated logo.jpg"  alt=""></h1>
+<div *ngIf="menuchange==='outside'" class="nav-search  flex ml-[5%] mr-[5%] mt-[5px]">
+  <input  type="text" placeholder="search Product" class=" p-2 rounded-md rounded-r-none border border-black border-r-0">
+<button class="bg-gray-300 border rounded-md rounded-l-none border-black p-2">Search</button>
+</div>
+<div [ngSwitch]="menuchange">
+<ul *ngSwitchCase="'outside'" class="inline-flex m-0 p-0 px-48">
+  <li class="pl-[15px] pt-[15px]"><a routerLink="seller-auth">Seller</a></li>
+  <li class="pl-[15px] pt-[15px]"><a routerLink="">Home</a></li>
+  <li class="pl-[15px] pt-[15px]"><a href="#">Login</a></li>
+  <li class="pl-[15px] pt-[15px]"><a href="#">Cart</a></li>
+
+</ul>
+</div>
+<div [ngSwitch]="menuchange">
+  <ul *ngSwitchCase="'seller'" class="inline-flex m-0 p-0 px-48 gap-9">
+    <li class="pl-[15px] pt-[15px]"><a routerLink="seller-add-product" >Add product</a></li>
+    <li class="pl-[15px] pt-[15px]"><a routerLink="seller-home" >List</a></li>
+    <li class="pl-[15px] pt-[15px]"><a (click)="Logout()" >Logout</a></li>
+    <li class="pl-[15px] pt-[15px] "><a >{{Sellername?.toLowerCase() | titlecase }}</a></li>
+
+  </ul>
+  </div>
+</nav>

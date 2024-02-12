@@ -1,0 +1,14 @@
+<div class="w-full h-full flex flex-col items-center gap-6 p-8">
+  <h1 class="text-3xl" >Update product</h1>
+  <p class="text-green-700">{{productmessge}}</p>
+  <form #addproduct="ngForm" (ngSubmit)="submit(addproduct.value)" class="flex flex-col gap-7">
+<input class="border border-black p-2" type="text" placeholder="Enter a Name" name="name" ngModel="{{ProductData?.name}}">
+<input class="border border-black p-2" type="text" placeholder="Enter Product price" name="price" ngModel="{{ProductData?.price}}">
+<input class="border border-black p-2" type="text" placeholder="Enter product category" name="category" ngModel="{{ProductData?.category}}">
+<input class="border border-black p-2" type="text" placeholder="Enter product color" name="color" ngModel="{{ProductData?.color}}">
+<textarea class="border border-black p-2" type="text" placeholder="Enter product description" name="description" ngModel="{{ProductData?.description}}"></textarea>
+<input class="border border-black p-2" type="text" placeholder="Enter prodct image" name="image" ngModel="{{ProductData?.image}}">
+<button class=" hover:border hover: border-black  p-2 bg-slate-500 text-white">Add product</button>
+
+  </form>
+</div>

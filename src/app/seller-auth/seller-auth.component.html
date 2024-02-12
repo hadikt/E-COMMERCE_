@@ -1,0 +1,27 @@
+<div class="p-11">
+<div *ngIf="!showlogin" class="text-center">
+  <h1 class="mb-24 text-2xl" >Seller Sign-up</h1>
+  <form #sellersignup="ngForm" (ngSubmit)="signup(sellersignup.value)" class="flex flex-col w-[300px] m-auto gap-3 h-[35px] mb-[20px]">
+    <input class=" border border-black p-2" type="text" ngModel placeholder="Enter name" name="name">
+    <input class=" border border-black p-2" type="password" placeholder="Enter password" name="password" ngModel>
+    <input class=" border border-black p-2" type="text" placeholder="Enter email" name="email" ngModel>
+<button class="bg-yellow-300 hover:bg-gray-200 p-2 w-[150px] m-auto rounded-md">Sign Up</button>
+<a class="via-violet-500 text-sm mt-[10px] text-left" (click)="openLogin()">Already had Account?Click for Login</a>
+  </form>
+
+</div>
+
+<div *ngIf="showlogin" class="text-center">
+  <h1 class="mb-24 text-2xl">Seller Login-up</h1>
+  <h1 class="text-red-400">{{autherror}}</h1>
+  <form #sellerLoginForm="ngForm" (ngSubmit)="login(sellerLoginForm.value)" class="flex flex-col w-[300px] m-auto gap-3 h-[35px] mb-[20px]">
+    <input class=" border border-black p-2" type="text" placeholder="Enter email" name="email" ngModel>
+    <input class=" border border-black p-2" type="password" placeholder="Enter password" name="password" ngModel>
+
+<button class="bg-yellow-300 hover:bg-gray-200 p-2 w-[150px] m-auto rounded-md">Login</button>
+<a class="via-violet-500 text-sm mt-[10px] text-left" (click)="opensignup()">Don't have Account?Click for sign-up</a>
+
+  </form>
+
+</div>
+</div>
